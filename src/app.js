@@ -6,8 +6,8 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  //write your code here
-  function javaexcercise() {
+  let excuse_generator = document.getElementById("excuse");
+  function onload() {
     let who = ["The dog", "My grandma", "His turtle", "My bird"];
     let action = ["ate", "peed", "crushed", "broke"];
     let what = ["my homework", "the keys", "the car"];
@@ -19,26 +19,20 @@ window.onload = function() {
       "while I was praying"
     ];
 
-    console.log("onLoad");
-    let randomnumber = Math.random() * 3;
-    console.log(Math.floor(randomnumber));
-    let whoindex = Math.floor(randomnumber);
-    let actionindex = Math.floor(randomnumber);
-    let randomnumber2 = Math.random() * 2;
-    let whatindex = Math.floor(randomnumber2);
-    let randomnumber3 = Math.random() * 4;
-    let whenindex = Math.floor(randomnumber3);
+    let whoind = Math.floor(Math.random() * who.length);
+    let actionind = Math.floor(Math.random() * action.length);
+    let whatind = Math.floor(Math.random() * what.length);
+    let whenind = Math.floor(Math.random() * when.length);
 
     return (
-      who[whoindex] +
+      who[whoind] +
       " " +
-      action[actionindex] +
+      action[actionind] +
       " " +
-      what[whatindex] +
+      what[whatind] +
       " " +
-      when[whenindex]
+      when[whenind]
     );
   }
-  console.log(javaexcercise());
-  console.log("Hello Rigo from the console!");
+  excuse_generator.innerHTML = onload();
 };
